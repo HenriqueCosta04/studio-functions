@@ -13,4 +13,4 @@ function() {
   let year = match[3]
 
   return `${year}-${month}-${day}`
- */
+}
