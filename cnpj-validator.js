@@ -1,29 +1,35 @@
 /**
  * @Studio
- * @property {string} studio_cnpj - CNPJ to validate
+ * @property {string} studio_cnpj - CNPJ a ser validado
  */
-function() {
-  let cnpj = studio_cnpj.replace(/[^\d]/g, '');
-  if (cnpj.length !== 14) return false
-  if (/^(\d)\1{13}$/.test(cnpj)) return false
+ function validarCNPJ() {
+     const cnpj = $message.replace(/\D/g, '');
 
-  let soma = 0
-  let multiplicador = 5
-  for (let i = 0; i < 12; i++) {
-    soma += parseInt(cnpj.charAt(i)) * multiplicador
-    multiplicador = multiplicador === 2 ? 9 : multiplicador - 1
-  }
+     function valida(cnpj) {
+         if (cnpj.length !== 14) return false;
+         if (/^(\d)\1+$/.test(cnpj)) return false; // bloqueia repetidos
 
-  let primeiroDigito = Math.floor(soma / 11) % 10
-  if (parseInt(cnpj.charAt(12)) !== primeiroDigito) return false
+         const calcDigito = (base) => {
+             let soma = 0;
+             let pos = base.length - 7;
 
-  soma = 0
-  multiplicador = 6
-  for (let i = 0; i < 13; i++) {
-    soma += parseInt(cnpj.charAt(i)) * multiplicador
-    multiplicador = multiplicador === 2 ? 9 : multiplicador - 1
-  }
+             for (let i = base.length; i >= 1; i--) {
+                 soma += parseInt(base.charAt(base.length - i), 10) * pos--;
+                 if (pos < 2) pos = 9;
+             }
 
-  let segundoDigito = Math.floor(soma / 11) % 10
-  return parseInt(cnpj.charAt(13)) === segundoDigito
-}
+             const resto = soma % 11;
+             return (resto < 2) ? 0 : (11 - resto);
+         };
+
+         const base12 = cnpj.slice(0, 12);
+         const d1 = calcDigito(base12);
+         const d2 = calcDigito(base12 + d1);
+
+         return cnpj === (base12 + String(d1) + String(d2));
+     }
+
+     if (!valida(cnpj)) throw 'CNPJ inválido';
+
+     return cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+ }
