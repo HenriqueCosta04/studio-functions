@@ -2,8 +2,8 @@
  * @Studio
  * @property {string} studio_cnpj - CNPJ a ser validado
  */
- function validarCNPJ() {
-     const cnpj = $message.replace(/\D/g, '');
+ function () {
+     const cnpj = studio_cnpj.replace(/\D/g, '');
 
      function valida(cnpj) {
          if (cnpj.length !== 14) return false;
