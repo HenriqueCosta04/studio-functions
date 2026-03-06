@@ -3,7 +3,7 @@
 * @property {string} studio_cpf - CPF a ser validado
  */
 function ValidarCPF() {
-    const cpf = $message.replace(/\D/g, '');
+    const cpf = studio_cpf.replace(/\D/g, '');
     function validar(cpf) {
         if (cpf.length !== 11) return false;
         if (/^(\d)\1+$/.test(cpf)) return false; // bloqueia repetidos
