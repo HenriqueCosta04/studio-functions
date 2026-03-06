@@ -2,7 +2,7 @@
 * @Studio
 * @property {string} studio_cpf - CPF a ser validado
  */
-function () {
+function ValidarCPF() {
     const cpf = studio_cpf.replace(/\D/g, '');
     function validar(cpf) {
         if (cpf.length !== 11) return false;
