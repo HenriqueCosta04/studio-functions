@@ -1,3 +1,3 @@
-function validateName(name, surname) {
-    return name + surname;
+function validateName(firstName, surname) {
+    return firstName + surname;
 }
