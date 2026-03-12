@@ -1,13 +1,13 @@
 import { validarCNPJ } from "../functions/validateCnpj";
 
 describe('Validar CNPJ', () => {
-  it('deve validar um CNPJ válido', () => {
-    globalThis.studio_cnpj = '12.345.678/0001-95';
-    expect(validarCNPJ()).toBe(studio_cnpj);
-  });
+    test('Deve validar um CNPJ válido', () => {
+        const cnpj = '12.345.678/0001-95';
+        expect(validarCNPJ(cnpj)).toBe('12.345.678/0001-95');
+    });
 
-  it('deve lançar um erro para um CNPJ inválido', () => {
-    globalThis.studio_cnpj = '12.345.678/0001-00';
-    expect(() => validarCNPJ()).toThrow('CNPJ inválido');
-  });
+    test('Deve lançar erro para um CNPJ inválido', () => {
+        const cnpj = '11.111.111/1111-11';
+        expect(() => validarCNPJ(cnpj)).toThrow('CNPJ inválido');
+    });
 });

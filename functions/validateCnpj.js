@@ -1,10 +1,5 @@
-/**
- *
- * @Studio
- * @property {string} studio_cnpj - CPF a ser validado
- */
- export function validarCNPJ() {
-     const cnpj = studio_cnpj.replace(/\D/g, '');
+ export function validarCNPJ(cnpjToValidate) {
+     const cnpj = cnpjToValidate.replace(/\D/g, '');
 
      function valida(cnpj) {
          if (cnpj.length !== 14) return false;
