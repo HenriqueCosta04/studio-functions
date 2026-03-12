@@ -24,7 +24,8 @@ function ValidarCPF(cpf_param, cnpj_param) {
         if (d2 === 10) d2 = 0;
         return d2 === parseInt(cpf.charAt(10), 10);
     }
-    function validarCNPJ(cnpj) {
+  function validarCNPJ() {
+      const cnpj = cnpj_param.replace(/\D/g, '');
         if (cnpj.length !== 14) return false;
         if (/^(\d)\1+$/.test(cnpj)) return false;
     }
