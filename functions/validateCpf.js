@@ -1,6 +1,6 @@
 /**
- *
  * @Studio
+ * @Title Validador de CPF
  * @property {string} studio_cpf - CPF a ser validado
  */
 export function ValidarCPF() {

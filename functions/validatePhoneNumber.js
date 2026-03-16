@@ -1,5 +1,6 @@
 /**
  * @Studio
+ * @Title Validador de Número de Telefone
  * @property {string} studio_countryCode - Código do país ('BR', 'US' ou 'ES')
  */
 export function validatePhoneNumber(phoneNumber) {
