@@ -25,7 +25,7 @@ const FileProcessor = {
 
   // Removes the @Studio JSDoc blocks
   stripHeaders(source) {
-    return source.replace(/\/\*\*[\s\S]*?@Studio[\s\S]*?\*\//g, "").trimStart();
+    return source.replace(/\/\*\*[\s\S]*?@Studio[\s\S]*?\*\//g, '').trimStart();
   },
 
   // Simplistic approach to finding the first function's opening brace
@@ -35,8 +35,8 @@ const FileProcessor = {
 
     // Create the declaration string: const studio_cpf = globalThis.studio_cpf;
     const declarations = properties
-      .map(p => `\n  const ${p.name} = globalThis.${p.name};`)
-      .join("");
+      .map((p) => `\n  const ${p.name} = globalThis.${p.name};`)
+      .join('');
 
     // Regex to find the first opening brace '{' of a function
     // This targets function declarations, expressions, and arrows
@@ -49,7 +49,7 @@ const FileProcessor = {
       declarations +
       source.slice(firstBraceIndex + 1)
     );
-  }
+  },
 };
 
 export default {
