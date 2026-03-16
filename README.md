@@ -106,6 +106,5 @@ npm test
      ```
 6. **É permitido pular a etapa de criação de testes para as funções?**
    - Não, a criação de testes é uma parte essencial do processo de desenvolvimento. Os testes garantem que as funções estão funcionando corretamente e ajudam a identificar possíveis erros ou falhas. A ausência de testes resultará na falha do upload do commit ao repositório, portanto, é obrigatório criar testes para todas as funções desenvolvidas.
-   -
 7. **Ao executar os testes, recebi o erro `Error: Existem arquivos de função sem testes correspondentes: ...`, o que devo fazer?**
    - Esse erro indica que existem arquivos de função que não possuem testes correspondentes. Para resolver esse problema, você deve criar arquivos de teste para cada função que não possui um teste correspondente. Certifique-se de seguir a nomenclatura correta para os arquivos de teste, utilizando a extensão `.spec.js` e garantindo que os testes estejam cobrindo as funcionalidades das funções adequadamente. Após criar os testes, execute novamente o comando `npm test` para verificar se todos os testes estão passando corretamente.
