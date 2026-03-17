@@ -1,4 +1,4 @@
-import { validateEmail } from '../functions/validateEmail';
+import { validateEmail } from '../functions/validarEmail';
 
 describe('Validar Email', () => {
   test('Deve validar um email válido', () => {

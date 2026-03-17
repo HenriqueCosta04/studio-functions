@@ -1,4 +1,4 @@
-import { ValidarCPF } from '../functions/validateCpf';
+import { ValidarCPF } from '../functions/validarCPF';
 
 describe('Validar CPF', () => {
   it('deve validar um CPF válido', () => {

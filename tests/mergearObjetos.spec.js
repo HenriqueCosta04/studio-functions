@@ -1,4 +1,4 @@
-import { deepMergeObjects } from '../functions/deepMergeObjects';
+import { deepMergeObjects } from '../functions/mergearObjetos';
 
 describe('deepMergeObjects', () => {
   it('deve mesclar dois objetos profundamente', () => {

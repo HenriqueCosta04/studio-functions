@@ -1,4 +1,4 @@
-import { validarCNPJ } from '../functions/validateCnpj';
+import { validarCNPJ } from '../functions/validarCNPJ';
 
 describe('Validar CNPJ', () => {
   test('Deve validar um CNPJ válido', () => {

@@ -1,4 +1,4 @@
-import { sortArray } from '../functions/sortArray.js';
+import { sortArray } from '../functions/ordenarLista.js';
 
 describe('sortArray', () => {
   it('deve ordenar o array em ordem crescente', () => {

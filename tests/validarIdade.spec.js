@@ -1,4 +1,4 @@
-import { validateAge } from '../functions/validateAge';
+import { validateAge } from '../functions/validarIdade';
 
 describe('Validar Idade', () => {
   const minAge = 18;
